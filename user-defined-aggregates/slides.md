@@ -109,3 +109,19 @@ FROM yields;
  day-2 | step-2 |  0.80 |   0.7200
  day-2 | step-3 |  0.99 | 0.712800
 ```
+
+---
+
+# State Machines as UDAs [^2] 🔥
+
+![inline](state_machine.pdf)
+
+[^2]: [http://felixge.de/2017/07/27/implementing-state-machines-in-postgresql.html](http://felixge.de/2017/07/27/implementing-state-machines-in-postgresql.html)
+
+---
+
+# Thanks
+
+* Slides: [github.com/felixge/talks]()
+* Twitter: [@felixge](twitter.com/felixge)
+* Jobs: [felixge@apple.com]() (Cupertino and Shanghai)
