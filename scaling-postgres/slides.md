@@ -83,7 +83,7 @@ slidecount: true
 
 ---
 
-![inline](./couch-crush.mov)
+![inline autoplay loop](./couch-crush.mov)
 
 ---
 
@@ -353,8 +353,7 @@ Execution time: 7268.675 ms
 
 * Automatic Vacuuming is triggered exclusively by dead rows
 * An append-only table will never have dead rows
-* This means this table will also not get statistics collected and is likely
-  to experience very bad query plans.
+* This means this table will also not get statistics collected and is likely to experience very bad query plans.
 * You'll have to manually vacuum such tables yourself, perhaps using CRON 😢
 
 ---
@@ -372,7 +371,7 @@ Execution time: 7268.675 ms
 
 A quick guide what we usually do when dealing with a slow query.
 
-1. Visualize the query plan[^9] [^10]
+1. Visualize the `EXPLAIN ANALYZE` query plan[^9] [^10]
 2. Identify and fix bad estimates (`VACUUM ANALYZE`, `CREATE STATISTICS`, `default_statistics_target`, etc.)
 3. Put parts of your query inside a CTE (`WITH` statement) which acts an optimization barrier.
 4. Experiment with with planner configs (e.g. `SET enable_seqscan=false;`), but avoid using them in production
@@ -584,10 +583,10 @@ There are even more advanced techniques available, and I highly recommend readin
 
 # Migrations
 
-- Make sure the schema of all your environments (local dev, staging, prod, etc.) stay in sync. [^11]
+- Make sure the schema of all your environments (local dev, staging, prod, etc.) stay in sync. [^15]
 - Make sure your schema changes don't require downtime [^12]
 
-[^11]: We are big fans of https://flywaydb.org/ for this.
+[^15]: We are big fans of https://flywaydb.org/ for this.
 
 [^12]: This post gives a good overview: https://www.braintreepayments.com/blog/safe-operations-for-high-volume-postgresql/ - but you should always read the docs carefully and test beforehand
 
@@ -620,19 +619,9 @@ Here is our stack:
 
 - Prometheus as a time series DB
 - Grafana for graphing and alerting
-- postgres-exporter for collecting postgres metrics
-- ELK stack for logging
-
----
-
-# Monitoring
-
-Here is our stack:
-
-- Prometheus as a time series DB
-- Grafana for graphing and alerting
 - node-exporter[^13] for collecting machine metrics
 - postgres-exporter[^14] for collecting postgres metrics
+- ELK stack for logging
 
 [^13]: https://github.com/wrouesnel/postgres_exporter
 
@@ -640,20 +629,11 @@ Here is our stack:
 
 ---
 
-# Monitoring
-
-What to monitor:
-
-- Application Latency (e.g. % of requests taking >1s)
-- Disk (Space Remaining, Busy %, Read/Write MB/s)
-- Network (Send/Receive Mbps)
-- Deadlocks (Should always be 0)
-
----
-
 # Questions?
 
-- Slides are at: https://github.com/felixge/talks
-- Web: http://felixge.de/
-- Twitter: http://twitter.com/felixge
+- Slides: github.com/felixge/talks
+- Web: felixge.de
+- Twitter: twitter.com/felixge
 - E-Mail: hi@felixge.de
+
+![right autoplay loop](./elephant.mov)
