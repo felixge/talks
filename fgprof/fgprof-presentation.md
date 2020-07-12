@@ -7,18 +7,6 @@ autoscale: true
 
 ^ Thank organizers
 
-
----
-
-# 10 Minutes
-
-- How tracing profiler work by building your own tracing profiler
-- How sampling profilers work
-- How to use Go's builtin sampling CPU profiler
-- How to use the fgprof profiler
-- What fgprof can do, that Go's profiler can't
-- How fgprof's implementation is different from Go's profiler
-
 ---
 
 # Why is this program slow?
