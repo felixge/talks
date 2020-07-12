@@ -147,6 +147,7 @@ $ go tool pprof -http=:6061 \
 
 - fgprof Overhead (it's similar to Go's profiler)
 - fgprof Accuracy (it's sometimes better than Go's profiler)
+- Why nobody has done this before (probably lack of async preemption until Go 1.14)
 - Related work on profiling Go code using Hardware Performance Monitoring Counters by Milind Chabbi
 
 ---
